@@ -1,4 +1,5 @@
 const addForm = document.querySelector(".add");
+const list = document.querySelector(".todos");
 
 const generateTemplate = todo => {
   const html = `
@@ -7,10 +8,13 @@ const generateTemplate = todo => {
     <i class="far fa-trash-alt delete"></i>
   </li>
   `;
+  list.innerHTML += html;
 };
 
 addForm.addEventListener("submit", e => {
   e.preventDefault();
   const todo = addForm.add.value.trim();
-  generateTemplate(todo);
+  if (todo.length) {
+    generateTemplate(todo);
+  }
 });
