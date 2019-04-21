@@ -2,10 +2,9 @@
 
 const getTodos = async () => {
   const response = await fetch("todos/luigi.json");
+  const data = await response.json();
 };
-const test = getTodos();
-console.log(test);
-
+getTodos();
 // fetch("todos/bolo.json")
 //   .then(response => {
 //     console.log("resolved", response);
