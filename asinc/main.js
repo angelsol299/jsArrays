@@ -22,6 +22,10 @@ getTodos("todos/bolo.json")
   })
   .then(data => {
     console.log("promise 2 resolved:", data);
+    return getTodos("todos/todos.json");
+  })
+  .then(data => {
+    console.log("promise 3 resolved", data);
   })
   .catch(err => {
     console.log("promise rejected:", err);
