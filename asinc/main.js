@@ -1,6 +1,12 @@
 //fetch api
 
-fetch("todos/bolo.json");
+fetch("todos/bolo.json")
+  .then(response => {
+    console.log("resolved", response);
+  })
+  .catch(err => {
+    console.log("rejected", err);
+  });
 
 //chaining promises
 
