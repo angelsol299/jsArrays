@@ -2,13 +2,16 @@
 
 const getTodos = async () => {
   const response = await fetch("todos/luigi.json");
+  if (response.status !== 200) {
+    throw new Error();
+  }
   const data = await response.json();
   return data;
 };
 
 getTodos()
   .then(data => console.log("resolve:", data))
-  .catch(err => console.log("reajected", err));
+  .catch(err => console.log("reajected", err.message));
 
 // fetch("todos/bolo.json")
 //   .then(response => {
