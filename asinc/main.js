@@ -3,8 +3,10 @@
 const getTodos = async () => {
   const response = await fetch("todos/luigi.json");
   const data = await response.json();
+  return data;
 };
-getTodos();
+getTodos().then(data => console.log("resolve:", data));
+
 // fetch("todos/bolo.json")
 //   .then(response => {
 //     console.log("resolved", response);
